@@ -1,0 +1,331 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "d90eb90e509d42800d2b",
+  "position": {
+    "x": 0,
+    "y": 217.67023568070687,
+    "z": 0,
+    "height": 502.31592849393894,
+    "width": 628.53890539754411,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Productos"
+                    }
+                  },
+                  "Property": "CATEGORIA"
+                }
+              },
+              "queryRef": "Dim_Productos.CATEGORIA",
+              "nativeQueryRef": "CATEGORIA",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Productos"
+                    }
+                  },
+                  "Property": "NOM_ARTICULO"
+                }
+              },
+              "queryRef": "Dim_Productos.NOM_ARTICULO",
+              "nativeQueryRef": "NOM_ARTICULO",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Stock_Actual"
+                }
+              },
+              "queryRef": "_Medidas.Stock_Actual",
+              "nativeQueryRef": "Stock_Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Alerta_Stock"
+                }
+              },
+              "queryRef": "_Medidas.Alerta_Stock",
+              "nativeQueryRef": "Alerta_Stock"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Stock_Seguridad"
+                }
+              },
+              "queryRef": "_Medidas.Stock_Seguridad",
+              "nativeQueryRef": "Stock_Seguridad"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Dim_Productos.CATEGORIA"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Productos"
+                    }
+                  },
+                  "Property": "CATEGORIA"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Dim_Productos.NOM_ARTICULO"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Electrónica'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Herramientas'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Hogar'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Repuestos'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Estado de Inventario por SKU'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4ab09d3f1596baa3a1ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Productos"
+              }
+            },
+            "Property": "CATEGORIA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "35a99972530155ab0950",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Productos"
+              }
+            },
+            "Property": "NOM_ARTICULO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8b222052e138b0390d4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Alerta_Stock"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b7f5ce0c4eb9409200a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Stock_Actual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "088ff0080336090b0043",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Stock_Seguridad"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+table Fact_Movimientos_Procesado
+	lineageTag: 615f3320-c7ae-4ef4-b792-21c6415d6d40
+
+	column FechaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 866769e1-145a-4b5b-94ab-1160c8dea027
+		summarizeBy: none
+		sourceColumn: FechaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_ARTICULO
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ad323fe-9698-4bb0-b388-dca8cef187bb
+		summarizeBy: none
+		sourceColumn: COD_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_DEPOSITO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f69aa8f-9817-4a30-92ec-bfdf7724a60e
+		summarizeBy: sum
+		sourceColumn: COD_DEPOSITO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NETO_MOVIMIENTOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 97b89740-280a-4048-8680-a7e943ea439c
+		summarizeBy: sum
+		sourceColumn: NETO_MOVIMIENTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Movimientos_Procesado = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\aalonso\Fact_Movimientos_Procesado.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"FechaKey", Int64.Type}, {"COD_ARTICULO", Int64.Type}, {"COD_DEPOSITO", Int64.Type}, {"NETO_MOVIMIENTOS", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,24 @@
+model Model
+	culture: es-PY
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-PY
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim_Productos","Fact_Ventas","Fact_Movimientos_Procesado","_Medidas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Productos
+ref table Fact_Ventas
+ref table Fact_Movimientos_Procesado
+ref table Dim_Calendario
+ref table DateTableTemplate_4ed3044c-b614-46cd-a088-841534092b13
+ref table LocalDateTable_85dcf05c-1e9a-4524-bcd9-cbe76e3ef345
+ref table _Medidas
+
+ref cultureInfo es-PY
+

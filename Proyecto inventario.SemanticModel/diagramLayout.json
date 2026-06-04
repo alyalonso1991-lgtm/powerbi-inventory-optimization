@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 145,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Dim_Productos",
+          "nodeLineageTag": "e05f9fa4-68bc-4594-b077-ddfe014e4d29",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 337,
+            "y": 317
+          },
+          "nodeIndex": "Fact_Ventas",
+          "nodeLineageTag": "8829407f-a967-4567-a87d-2472b0ba2540",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 350,
+            "y": 0
+          },
+          "nodeIndex": "Fact_Movimientos_Procesado",
+          "nodeLineageTag": "615f3320-c7ae-4ef4-b792-21c6415d6d40",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 807,
+            "y": 135
+          },
+          "nodeIndex": "Dim_Calendario",
+          "nodeLineageTag": "ac8c18e5-3e35-4a8c-b7a0-7171daa997eb",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1091,
+            "y": 182.5
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "96ff470c-f8e7-4f2b-9bf1-72e0e3114822",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

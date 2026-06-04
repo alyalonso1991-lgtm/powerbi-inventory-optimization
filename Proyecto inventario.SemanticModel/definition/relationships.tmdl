@@ -1,0 +1,21 @@
+relationship AutoDetected_5c92cec2-cb53-4a5a-b60e-15d5b99e279e
+	fromColumn: Fact_Ventas.COD_ARTICULO
+	toColumn: Dim_Productos.COD_ARTICULO
+
+relationship AutoDetected_8b9414da-ecc7-48b3-bd60-0fabd4491b97
+	fromColumn: Fact_Movimientos_Procesado.COD_ARTICULO
+	toColumn: Dim_Productos.COD_ARTICULO
+
+relationship de2ec55e-59db-43f1-ad14-89db2c620038
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Calendario.Date
+	toColumn: LocalDateTable_85dcf05c-1e9a-4524-bcd9-cbe76e3ef345.Date
+
+relationship 4555e0f5-057a-c769-3770-bf67fbc68817
+	fromColumn: Fact_Movimientos_Procesado.FechaKey
+	toColumn: Dim_Calendario.FechaKey
+
+relationship 2d45016e-e9f3-0cff-ec81-8749dfdf26bf
+	fromColumn: Fact_Ventas.FECHA_VENTA
+	toColumn: Dim_Calendario.FechaKey
+

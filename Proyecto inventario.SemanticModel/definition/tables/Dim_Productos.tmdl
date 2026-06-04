@@ -1,0 +1,49 @@
+table Dim_Productos
+	lineageTag: e05f9fa4-68bc-4594-b077-ddfe014e4d29
+
+	column COD_ARTICULO
+		dataType: int64
+		formatString: 0
+		lineageTag: d26fe142-828b-4137-a1eb-6a5e17c76311
+		summarizeBy: none
+		sourceColumn: COD_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_ARTICULO
+		dataType: string
+		lineageTag: 1264a7c1-8737-4afb-a1c6-ebf06ed59161
+		summarizeBy: none
+		sourceColumn: NOM_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: 97ab6fa2-73dc-4732-8b06-f7a5f31a33f0
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTO_UNITARIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 53888bcb-8b4d-4eea-a0ed-e0181bb882eb
+		summarizeBy: sum
+		sourceColumn: COSTO_UNITARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Productos = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\aalonso\Dim_Productos.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"COD_ARTICULO", Int64.Type}, {"NOM_ARTICULO", type text}, {"CATEGORIA", type text}, {"COSTO_UNITARIO", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
